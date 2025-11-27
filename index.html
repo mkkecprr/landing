@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FinTech Product — Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --glass: rgba(255,255,255,0.06);
+      --accent1: #7c3aed; /* purple */
+      --accent2: #06b6d4; /* teal */
+      --muted: rgba(255,255,255,0.7);
+      --card: rgba(255,255,255,0.03);
+      --radius: 14px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.14), transparent),
+                  radial-gradient(900px 400px at 90% 90%, rgba(6,182,212,0.10), transparent),
+                  var(--bg);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 16px;
+    }
+
+    .container{
+      width:100%;
+      max-width:1100px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:20px;
+      padding:36px;
+      box-shadow: 0 8px 28px rgba(2,6,23,0.6);
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:center;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:8px;
+    }
+    .logo{
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      overflow:hidden;
+      background:linear-gradient(135deg,var(--accent1),var(--accent2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 6px 18px rgba(12,18,34,0.6);
+    }
+    .logo img{width:86%;height:86%;object-fit:contain;display:block}
+
+    .badge-coming{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:700;
+      letter-spacing:0.6px;
+      font-size:13px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .hero{
+      padding:12px 4px 0 0;
+    }
+    h1{
+      margin:6px 0 6px 0;
+      font-size:34px;
+      line-height:1.05;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:linear-gradient(90deg,var(--accent1),var(--accent2));
+    }
+    p.lead{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      max-width:54ch;
+      font-size:15px;
+    }
+
+    .features{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .chip{
+      background:var(--card);
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:600;
+      font-size:13px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    /* Right column */
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:16px;
+      padding:22px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .countdown{
+      display:flex;
+      gap:10px;
+      justify-content:space-between;
+      margin-bottom:14px;
+    }
+    .timebox{
+      flex:1;
+      background:var(--glass);
+      padding:10px 12px;
+      border-radius:10px;
+      text-align:center;
+      font-weight:700;
+    }
+    .timebox small{display:block;font-weight:600;color:var(--muted);font-size:11px}
+
+    .subscribe{
+      display:flex;
+      gap:10px;
+      margin-top:10px;
+    }
+    .subscribe input[type="email"]{
+      flex:1;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.04);
+      background:transparent;color:inherit;font-weight:600;
+      outline:none;
+    }
+    .btn{
+      background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      padding:12px 14px;border-radius:12px;border:0;font-weight:800;cursor:pointer;color:#041025;
+      box-shadow: 0 6px 20px rgba(12,18,34,0.6);
+    }
+
+    .contact{
+      margin-top:16px;font-size:14px;color:var(--muted);
+    }
+    .socials{display:flex;gap:10px;margin-top:12px}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:var(--card);text-decoration:none;color:var(--muted);font-weight:700}
+
+    footer{grid-column:1/-1;margin-top:18px;text-align:center;color:rgba(255,255,255,0.45);font-size:13px}
+
+    /* small screens */
+    @media (max-width:880px){
+      .container{grid-template-columns:1fr; padding:24px}
+      .hero h1{font-size:30px}
+    }
+
+    /* subtle anim */
+    .logo, .panel{transition:transform .45s cubic-bezier(.2,.9,.2,1)}
+    .logo:hover, .panel:hover{transform:translateY(-6px)}
+
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <section class="hero">
+      <header>
+        <div class="logo" aria-hidden="true">
+          <img src="https://raw.githubusercontent.com/mkkecprr/images/refs/heads/main/logo%20it.png" alt="Company logo">
+        </div>
+        <div>
+          <div class="badge-coming">COMING SOON</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px;font-weight:700">Licensed FinTech • Product details after NDA</div>
+        </div>
+      </header>
+
+      <h1>Smarter payments. Safer flows.<br><span style="font-weight:600;color:var(--muted);font-size:18px;">Build trust — grow users — keep compliance</span></h1>
+      <p class="lead">We are a new licensed fintech startup building a privacy-first product to simplify payments and regulatory compliance for digital platforms. Looking for UA &amp; brandformance partners to launch and scale our app globally.</p>
+
+      <div class="features">
+        <div class="chip">Full-service UA</div>
+        <div class="chip">Brandformance &amp; media</div>
+        <div class="chip">Retargeting pipelines</div>
+        <div class="chip">Creative &amp; ASO</div>
+        <div class="chip">Flexible engagement models</div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+        <a class="btn" href="#contact" style="text-decoration:none;">Request agency pack</a>
+        <a class="btn" href="#nda" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);">Sign NDA</a>
+      </div>
+
+      <p style="margin-top:18px;color:var(--muted);font-size:13px">PS: We are conducting agency research — please include your general presentation and case studies in reply.</p>
+    </section>
+
+    <aside class="panel" aria-labelledby="countdown">
+      <h3 id="countdown" style="margin:0 0 8px 0">Launch ETA</h3>
+      <div class="countdown" role="timer" aria-live="polite">
+        <div class="timebox"><div id="days">--</div><small>Days</small></div>
+        <div class="timebox"><div id="hours">--</div><small>Hours</small></div>
+        <div class="timebox"><div id="mins">--</div><small>Minutes</small></div>
+      </div>
+
+      <div style="margin-top:8px;font-size:13px;color:var(--muted)">Join the waitlist to receive our agency brief and launch timeline.</div>
+
+      <form id="subscribeForm" class="subscribe" onsubmit="return onSubscribe(event)">
+        <input id="email" type="email" placeholder="your@email.com" required>
+        <button class="btn" type="submit">Notify me</button>
+      </form>
+
+      <div class="contact" id="contact">
+        <div style="font-weight:700">Contact</div>
+        <div style="margin-top:6px;color:var(--muted);">For agency inquiries, please send your presentation & pricing to:</div>
+        <div style="margin-top:8px;font-weight:800">agency@our-startup.com</div>
+
+        <div class="socials">
+          <a href="#" title="LinkedIn">in</a>
+          <a href="#" title="Twitter">tw</a>
+          <a href="#" title="Telegram">tg</a>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;font-size:12px;color:rgba(255,255,255,0.35)">We respect privacy and operate under licensed financial regulations. Product name available after NDA.</div>
+    </aside>
+
+    <footer>
+      © <span id="year"></span> Licensed FinTech — All rights reserved • Built with care
+    </footer>
+
+    <!-- Additional logo at bottom right -->
+    <div style="position:fixed; bottom:20px; right:20px; width:80px; height:80px; opacity:0.8;">
+      <img src="https://raw.githubusercontent.com/mkkecprr/images/refs/heads/main/logo%20it.png" alt="Company logo" style="width:100%; height:100%; object-fit:contain;">
+    </div>
+  </main>
+
+  <script>
+    // Countdown to an example date (modify as needed)
+    const launch = new Date();
+    launch.setDate(launch.getDate() + 28); // 28 days from now
+
+    function updateCountdown(){
+      const now = new Date();
+      const diff = Math.max(0, launch - now);
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff/(1000*60*60))%24);
+      const mins = Math.floor((diff/(1000*60))%60);
+      document.getElementById('days').textContent = String(days).padStart(2,'0');
+      document.getElementById('hours').textContent = String(hours).padStart(2,'0');
+      document.getElementById('mins').textContent = String(mins).padStart(2,'0');
+    }
+    setInterval(updateCountdown,1000*30);
+    updateCountdown();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple subscribe simulation
+    function onSubscribe(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      if(!email) return false;
+      // fake success message
+      const btn = e.target.querySelector('button');
+      btn.disabled = true; btn.textContent = 'Subscribed';
+      setTimeout(()=>{btn.disabled=false;btn.textContent='Notify me'},2500);
+      alert('Thanks! We will send agency info and our presentation to ' + email + ' when available.');
+      e.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
