@@ -251,7 +251,7 @@
 
   <script>
     // Countdown to an example date (modify as needed)
-    const launch = new Date();
+    const launch = new Date('2026-01-15T00:00:00');
     launch.setDate(launch.getDate() + 28); // 28 days from now
 
     function updateCountdown(){
@@ -264,7 +264,7 @@
       document.getElementById('hours').textContent = String(hours).padStart(2,'0');
       document.getElementById('mins').textContent = String(mins).padStart(2,'0');
     }
-    setInterval(updateCountdown,1000*30);
+    setInterval(updateCountdown, 1000);
     updateCountdown();
 
     document.getElementById('year').textContent = new Date().getFullYear();
